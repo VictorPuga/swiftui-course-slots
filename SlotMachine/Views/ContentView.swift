@@ -11,6 +11,8 @@ struct ContentView: View {
   // MARK: - Properties
   let symbols: [String] = ["gfx-bell", "gfx-cherry", "gfx-coin", "gfx-grape", "gfx-seven", "gfx-strawberry"]
   
+  let haptics = UINotificationFeedbackGenerator()
+  
   @State private var showingInfoView: Bool = false
   
   @State private var reels: [Int] = [0, 1, 2]
@@ -36,6 +38,8 @@ struct ContentView: View {
   
   func spinReels() {
     reels = reels.map { _ in Int.random(in: 0..<symbols.count) }
+    playSound(sound: "spin", type: "mp3")
+    haptics.notificationOccurred(.success)
   }
   
   func checkWinning() {
@@ -45,6 +49,8 @@ struct ContentView: View {
       
       if coins > highscore {
         newHighscore()
+      } else {
+        playSound(sound: "win", type: "mp3")
       }
     } else {
       playerLoses()
@@ -58,6 +64,7 @@ struct ContentView: View {
   func newHighscore() {
     highscore = coins
     UserDefaults.standard.set(highscore, forKey: "HighScore")
+    playSound(sound: "high-score", type: "mp3")
   }
   
   func playerLoses() {
@@ -66,15 +73,14 @@ struct ContentView: View {
   
   func activateBet(_ amount: Int) {
     betAmount = amount
+    playSound(sound: "casino-chips", type: "mp3")
+    haptics.notificationOccurred(.success)
   }
-  
-  // func activateBet10() {
-  //   betAmount = 10
-  // }
   
   func isGameOver() {
     if coins <= 0 {
       showingModal = true
+      playSound(sound: "game-over", type: "mp3")
     }
   }
   
@@ -83,6 +89,7 @@ struct ContentView: View {
     highscore = 0
     coins = 100
     activateBet(10)
+    playSound(sound: "chimeup", type: "mp3")
   }
   
   // MARK: - Body
@@ -140,6 +147,7 @@ struct ContentView: View {
               .animation(.easeOut(duration: Double.random(in: 0.5...0.7)))
               .onAppear {
                 animatingSymbol.toggle()
+                playSound(sound: "riseup", type: "mp3")
               }
           }
           HStack(spacing: 0) {
@@ -152,10 +160,7 @@ struct ContentView: View {
                 .opacity(animatingSymbol ? 1 : 0)
                 .offset(y: animatingSymbol ? 0 : -50)
                 .animation(.easeOut(duration: Double.random(in: 0.7...0.9)))
-
-                .onAppear {
-                  animatingSymbol.toggle()
-                }
+                // .onAppear { animatingSymbol.toggle() }
             }
             Spacer()
             
@@ -169,9 +174,7 @@ struct ContentView: View {
                 .offset(y: animatingSymbol ? 0 : -50)
                 .animation(.easeOut(duration: Double.random(in: 0.9...1.1)))
                 .animation(.easeOut)
-                .onAppear {
-                  animatingSymbol.toggle()
-                }
+                // .onAppear { animatingSymbol.toggle() }
             }
             
           } // :HStack

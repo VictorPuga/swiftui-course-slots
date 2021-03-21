@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3215B6032607EF2A00DBB476 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3215B6022607EF2A00DBB476 /* InfoView.swift */; };
+		3215B60626080B6100DBB476 /* PlaySound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3215B60526080B6100DBB476 /* PlaySound.swift */; };
 		328852DA25EDB0A90076E2B1 /* SlotMachineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328852D925EDB0A90076E2B1 /* SlotMachineApp.swift */; };
 		328852DC25EDB0A90076E2B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328852DB25EDB0A90076E2B1 /* ContentView.swift */; };
 		328852DE25EDB0AA0076E2B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 328852DD25EDB0AA0076E2B1 /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		3215B6022607EF2A00DBB476 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		3215B60526080B6100DBB476 /* PlaySound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySound.swift; sourceTree = "<group>"; };
 		328852D625EDB0A90076E2B1 /* SlotMachine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlotMachine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		328852D925EDB0A90076E2B1 /* SlotMachineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotMachineApp.swift; sourceTree = "<group>"; };
 		328852DB25EDB0A90076E2B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			children = (
 				32B6B93125EDB80300997057 /* Modifiers.swift */,
 				32B6B93425EDBB3800997057 /* Extensions.swift */,
+				3215B60526080B6100DBB476 /* PlaySound.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32B6B93925EDBD5C00997057 /* ReelView.swift in Sources */,
+				3215B60626080B6100DBB476 /* PlaySound.swift in Sources */,
 				32B6B93525EDBB3800997057 /* Extensions.swift in Sources */,
 				32B6B92F25EDB7DA00997057 /* LogoView.swift in Sources */,
 				328852DC25EDB0A90076E2B1 /* ContentView.swift in Sources */,

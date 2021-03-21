@@ -45,6 +45,12 @@ struct InfoView: View {
       .accentColor(.secondary)
       , alignment: .topTrailing
     )
+    .onAppear {
+      playSound(sound: "background-music", type: "mp3")
+    }
+    .onDisappear {
+      audioPlayer?.stop()
+    }
   }
 }
 

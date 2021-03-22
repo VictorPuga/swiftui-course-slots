@@ -8,3 +8,4 @@ Seventh app from the SwiftUI online course
 - UserDefaults
 - AVAudioPlayer
 - Haptics
+- Sticker pack

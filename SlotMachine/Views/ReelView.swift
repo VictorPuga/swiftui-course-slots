@@ -8,10 +8,6 @@
 import SwiftUI
 
 struct ReelView: View {
-  // MARK: - Properties
-  
-  
-  
   // MARK: - Body
   var body: some View {
     Image("gfx-reel")
